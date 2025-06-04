@@ -1,0 +1,211 @@
+/* Services Section Styles */
+.services-section {
+    background-color: var(--bg-light);
+    position: relative;
+    padding: calc(var(--spacing-xxl) + 50px) 0 var(--spacing-xxl);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xxl);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--eco-green) 0%, var(--primary-light) 100%);
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.service-card {
+    background-color: var(--bg-white);
+    border-radius: 16px;
+    padding: var(--spacing-xl);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-dark) 0%, var(--eco-green) 100%);
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+    transform-origin: left;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card.featured {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, rgba(1, 24, 80, 0.9) 100%);
+    color: white;
+}
+
+.service-card.featured .service-icon,
+.service-card.featured .service-title,
+.service-card.featured .service-description,
+.service-card.featured .service-features {
+    color: white;
+}
+
+.service-card.featured .service-features li {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Service Icon */
+.service-icon {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-md);
+    transition: all var(--transition-normal);
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--eco-green);
+    color: white;
+}
+
+.service-icon .material-icons {
+    font-size: 32px;
+    color: var(--eco-green);
+    transition: color var(--transition-normal);
+}
+
+.service-card:hover .service-icon .material-icons {
+    color: white;
+}
+
+.service-card.featured .service-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.service-card.featured .service-icon .material-icons {
+    color: white;
+}
+
+/* Service Content */
+.service-title {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.service-description {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.service-features {
+    margin-bottom: var(--spacing-lg);
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-gray);
+    font-size: 0.875rem;
+}
+
+.service-features .material-icons {
+    font-size: 18px;
+    color: var(--eco-green);
+}
+
+.service-card.featured .service-features .material-icons {
+    color: var(--primary-light);
+}
+
+/* Service Button */
+.service-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all var(--transition-normal);
+    background-color: transparent;
+    color: var(--eco-green);
+    border: 2px solid var(--eco-green);
+}
+
+.service-btn:hover {
+    background-color: var(--eco-green);
+    color: white;
+    transform: translateX(4px);
+}
+
+.service-btn.primary {
+    background-color: white;
+    color: var(--primary-dark);
+    border-color: white;
+}
+
+.service-btn.primary:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.service-btn .material-icons {
+    font-size: 18px;
+    transition: transform var(--transition-normal);
+}
+
+.service-btn:hover .material-icons {
+    transform: translateX(4px);
+}

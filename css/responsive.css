@@ -1,0 +1,337 @@
+/* Responsive Styles */
+
+/* Tablet Landscape */
+@media (max-width: 1024px) {
+    :root {
+        --container-width: 960px;
+    }
+    
+    /* Header */
+    .header-actions {
+        gap: var(--spacing-sm);
+    }
+    
+    .phone-number span {
+        display: none;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    /* Services */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Features */
+    .features-content {
+        gap: var(--spacing-xl);
+    }
+    
+    /* Eco Grid */
+    .eco-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    /* Testimonials */
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+    /* Base */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; }
+    
+    section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    /* Header */
+    .main-nav {
+        display: none;
+    }
+    
+    .header-actions .reserve-btn {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    /* Hero */
+    .hero-section {
+        min-height: auto;
+        padding-top: calc(90px + var(--spacing-lg));
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+    
+    .hero-features {
+        gap: var(--spacing-md);
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-xl);
+    }
+    
+    .stat-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--spacing-md);
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card.featured {
+        order: -1;
+    }
+    
+    /* Features */
+    .features-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+    
+    .features-text {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .features-image {
+        height: 400px;
+    }
+    
+    .features-badge {
+        right: 20px;
+        bottom: 20px;
+        transform: rotate(0);
+    }
+    
+    /* Eco Grid */
+    .eco-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Testimonials */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* CTA */
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links {
+        align-items: center;
+    }
+    
+    .footer-contact .contact-item {
+        justify-content: center;
+        text-align: left;
+    }
+    
+    .footer-legal {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .legal-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    /* Base */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    /* Header */
+    .header-container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .logo-text {
+        font-size: 1.125rem;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .primary-btn,
+    .secondary-btn {
+        padding: 14px 24px;
+        font-size: 0.875rem;
+        width: 100%;
+    }
+    
+    /* Services */
+    .service-card {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Features */
+    .features-list {
+        gap: var(--spacing-md);
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .features-image {
+        height: 300px;
+    }
+    
+    .features-badge {
+        padding: var(--spacing-md);
+    }
+    
+    .badge-number {
+        font-size: 2rem;
+    }
+    
+    /* Eco */
+    .eco-card {
+        padding: var(--spacing-lg);
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+        padding: var(--spacing-lg);
+    }
+    
+    /* CTA */
+    .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-features {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    /* Footer */
+    .footer-title {
+        font-size: 1.25rem;
+    }
+    
+    .legal-links {
+        gap: var(--spacing-sm);
+    }
+    
+    .legal-links a:not(:last-child)::after {
+        display: none;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+    /* Hero */
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    /* Buttons */
+    .primary-btn,
+    .secondary-btn,
+    .cta-primary,
+    .cta-secondary {
+        padding: 12px 20px;
+        font-size: 0.8125rem;
+    }
+    
+    /* Icons */
+    .service-icon,
+    .feature-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .service-icon .material-icons,
+    .feature-icon .material-icons {
+        font-size: 24px;
+    }
+}
