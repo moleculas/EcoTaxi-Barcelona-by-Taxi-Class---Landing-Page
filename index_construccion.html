@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTaxi Barcelona by Taxi Class - Próximamente</title>
+    <meta name="description" content="EcoTaxi Barcelona by Taxi Class - Estamos trabajando en algo increíble. Próximamente la mejor experiencia de transporte ecológico premium en Barcelona.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700&family=Inconsolata:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #011850;
+            --primary-light: #05D9D9;
+            --eco-green: #4CAF50;
+            --eco-light: #81C784;
+            --bg-white: #FFFFFF;
+            --bg-light: #F5F5F5;
+            --text-dark: #212121;
+            --text-gray: #616161;
+            --text-light: #9E9E9E;
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+            --font-primary: 'Epilogue', 'Inconsolata', sans-serif;
+            --font-secondary: 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #02205c 50%, var(--primary-light) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        .construction-container {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .logo-section {
+            margin-bottom: 3rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo-text {
+            font-family: var(--font-primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .eco-text {
+            color: var(--eco-green);
+        }
+
+        .by-text {
+            color: var(--primary-light);
+            font-size: 1.5rem;
+        }
+
+        .taxiclass-text {
+            color: var(--bg-white);
+        }
+
+        .main-content {
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .construction-icon {
+            font-size: 4rem;
+            color: var(--primary-light);
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        .main-title {
+            font-family: var(--font-primary);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--bg-white), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .countdown-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .countdown-title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--eco-green);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 1.5rem 1rem;
+            min-width: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-light);
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--bg-light);
+            margin-top: 0.5rem;
+        }
+
+        .features-preview {
+            margin: 3rem 0;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--eco-green);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            font-size: 0.9rem;
+            color: var(--bg-light);
+            line-height: 1.4;
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+            animation: fadeIn 1s ease-out 0.9s both;
+        }
+
+        .contact-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--eco-green);
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-item i {
+            color: var(--primary-light);
+        }
+
+        .contact-item a {
+            color: var(--bg-white);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--bg-white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 30%;
+            left: 5%;
+            animation-delay: 4s;
+        }
+
+        .floating-element:nth-child(4) {
+            bottom: 10%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .construction-container {
+                padding: 1rem;
+            }
+
+            .logo-text {
+                font-size: 2rem;
+            }
+
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .countdown {
+                gap: 1rem;
+            }
+
+            .countdown-item {
+                min-width: 80px;
+                padding: 1rem 0.5rem;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <i class="material-icons floating-element" style="font-size: 3rem;">electric_car</i>
+        <i class="material-icons floating-element" style="font-size: 2.5rem;">eco</i>
+        <i class="material-icons floating-element" style="font-size: 3.5rem;">local_taxi</i>
+        <i class="material-icons floating-element" style="font-size: 2rem;">nature</i>
+    </div>
+
+    <div class="construction-container">
+        <!-- Logo -->
+        <div class="logo-section">
+            <h1 class="logo-text">
+                <span class="eco-text">EcoTaxi Barcelona</span><br>
+                <span class="by-text">by</span>
+                <span class="taxiclass-text">Taxi Class</span>
+            </h1>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <div class="construction-icon">
+                <i class="material-icons" style="font-size: inherit;">build</i>
+            </div>
+            
+            <h2 class="main-title">Sitio Web en Mantenimiento</h2>
+            <p class="subtitle">
+                Estamos perfeccionando la mejor experiencia de transporte ecológico premium en Barcelona. 
+                Nuestra nueva web estará lista muy pronto con todas las novedades de EcoTaxi Barcelona by Taxi Class.
+            </p>
+
+            <!-- Cuenta Atrás -->
+            <div class="countdown-container">
+                <h3 class="countdown-title">Lanzamiento en:</h3>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">--</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">--</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">--</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">--</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Información de Contacto -->
+            <div class="contact-info">
+                <h3 class="contact-title">¿Necesitas nuestros servicios ahora?</h3>
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <i class="material-icons">phone</i>
+                        <a href="tel:+34933070707">93 307 07 07</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="material-icons">email</i>
+                        <a href="mailto:info@ecotaxibarcelona.es">info@ecotaxibarcelona.es</a>
+                    </div>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configurar fecha de lanzamiento (15 días desde hoy)
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 15);
+        launchDate.setHours(12, 0, 0, 0); // Mediodía
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate.getTime() - now;
+
+            // Cálculos de tiempo
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Mostrar el resultado
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            // Si la cuenta atrás termina
+            if (distance < 0) {
+                document.querySelector('.countdown-title').textContent = '¡Ya Estamos Aquí!';
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Actualizar la cuenta atrás cada segundo
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Animación adicional al cargar la página
+        window.addEventListener('load', function() {
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                document.body.style.overflow = 'auto';
+            }, 1500);
+        });
+
+        // Efecto parallax suave en los elementos flotantes
+        window.addEventListener('mousemove', function(e) {
+            const floatingElements = document.querySelectorAll('.floating-element');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            floatingElements.forEach((element, index) => {
+                const speed = (index + 1) * 0.5;
+                const rotateX = (y - 0.5) * speed * 10;
+                const rotateY = (x - 0.5) * speed * 10;
+                
+                element.style.transform += ` rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+        });
+    </script>
+</body>
+</html>

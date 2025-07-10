@@ -103,6 +103,11 @@ function initAnimations() {
 
 // Handle reserve button clicks
 function handleReserveClick(e) {
+    // Si el botón tiene un onclick definido, no hacemos nada y dejamos que se ejecute
+    if (e.currentTarget.hasAttribute('onclick')) {
+        return; // No interferir con botones que tienen onclick
+    }
+    
     // Si es un enlace real con href, dejamos que siga su curso normal
     if (e.currentTarget.tagName === 'A' && e.currentTarget.href && e.currentTarget.href !== '#') {
         return; // No prevenir el comportamiento por defecto para enlaces reales
@@ -270,7 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     reserveButtons.forEach(button => {
-        button.addEventListener('click', handleReserveClick);
+        // Solo agregar el event listener a botones que NO tienen onclick
+        if (!button.hasAttribute('onclick')) {
+            button.addEventListener('click', handleReserveClick);
+        }
     });
     
     // Initialize animations
