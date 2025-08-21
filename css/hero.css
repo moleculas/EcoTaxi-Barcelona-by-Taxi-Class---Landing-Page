@@ -196,7 +196,7 @@
 
 .stat-label {
     font-size: 0.875rem;
-    color: white !important;
+    color: var(--eco-green) !important;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
